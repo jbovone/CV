@@ -1,0 +1,280 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@import "_variables";
+@import "_side-column";
+@import "tarjeta";
+@import "diskette";
+@import "commodore";
+@import "_modal";
+@import "keyboard-modal";
+@import "pad";
+
+@font-face {
+  font-family: "Commodore";
+  src: url("../fonts/commodore_64/Commodore\ Angled\ v1.2.ttf");
+}
+@font-face {
+  font-family: "Oxanium";
+  src: url("../fonts/Oxanium/Oxanium-Regular.ttf");
+  font-display: swap;
+}
+main {
+  display: grid;
+  grid-template-columns: 1fr 3% 2fr 3%;
+}
+.content {
+  position: relative;
+  min-height: 97vh;
+  margin-bottom: 20px;
+  background-color: $colorPrimary;
+  @include displayDefault(column, none);
+  align-items: center;
+  background-image: url("../img/background.svg"), url("../img/background2.svg");
+  background-repeat: no-repeat, no-repeat;
+  background-position: center;
+  background-size: 90%;
+  grid-column: 3/4;
+  box-shadow: 10px 10px 7px gray;
+  z-index: 0;
+  .head {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    margin: 45px 0px 30px 0px;
+    z-index: 0;
+  }
+}
+.caption {
+  font-size: 9px;
+}
+a {
+  text-decoration: none;
+  @include textPrimary($textDefault, $textColor);
+  text-align: center;
+}
+.column-displacement {
+  transform: translateX(-100%);
+  animation: columnTranslate 0.7s forwards ease-in-out;
+  @keyframes columnTranslate {
+    100% {
+      transform: translateX(0%);
+    }
+  }
+}
+.hidden {
+  display: none !important;
+}
+
+.locked {
+  height: 70px;
+  width: 80px;
+  border-radius: 5px;
+  opacity: 0.15;
+  border: solid $colorSecundary 1px;
+  background-color: black;
+  margin: 5px;
+  text-align: center;
+  @include textPrimary($textBold, $colorSecundary);
+  font-size: 4rem;
+}
+.light-theme {
+  background-color: rgb(255, 250, 250);
+}
+@media (any-hover: hover) {
+  .diskette-icon:hover {
+    transition-duration: 500ms;
+    transform: rotate(-45deg) scale(1.2) translateX(-50px);
+  }
+  #options-button:hover {
+    transition: 1s;
+    animation: cogwheel infinite 1s linear;
+    @keyframes cogwheel {
+      0% {
+        transform: rotate(0deg);
+      }
+      50% {
+        transform: rotate(180deg) scale(1.4) skew(10deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  }
+}
+@media (pointer: coarse) {
+  .keyboard-button {
+    display: block;
+  }
+}
+@media only screen and(max-width: 1195px) {
+  .content {
+    .head {
+      @include displayDefault(column, space-between);
+      align-items: center;
+      margin: 25px 0px 10px 0px;
+    }
+  }
+  .shelve {
+    transform: scale(0.8);
+    align-self: flex-start;
+    margin-top: 40px;
+  }
+  .screen {
+    width: 90%;
+    height: 450px;
+    margin-bottom: 40px;
+  }
+  .old-style {
+    border: 4vw solid;
+    font-size: 0.84em;
+  }
+}
+@media only screen and (max-width: 940px) {
+  main {
+    @include displayDefault(column-reverse, none);
+    align-items: flex-start;
+    .column-1 {
+      width: 97vw;
+    }
+  }
+  .screen {
+    max-width: 600px;
+  }
+  .modal-options {
+    transform: translateX(-50%) translateY(-50%);
+  }
+  .content {
+    width: 97vw;
+    margin-bottom: 30px;
+  }
+}
+@media only screen and (max-width: 730px) {
+  .modal-options {
+    width: 84vw;
+    max-width: 400px;
+  }
+  .head .shelve {
+    transform: scale(0.7);
+    width: 0px;
+  }
+  #options-button {
+    right: 6%;
+    top: 200px;
+    transform: scale(0.8);
+  }
+  .content {
+    background-image: url("../img/background.svg"), url("../img/background2.svg");
+    background-position: 50% 40%, 50% 40%;
+  }
+}
+@media only screen and (max-width: 380px) {
+  .tarjeta {
+    width: 290px;
+  }
+  .shelve {
+    transform: scale(0.6);
+    width: 0px;
+  }
+  .hobbies {
+    transform: scale(0.85);
+  }
+  .modern-style {
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .modal-options {
+    font-size: 10px;
+  }
+
+  .side-tag {
+    letter-spacing: 0px;
+    font-size: 18px;
+  }
+  .logos-placeholder {
+    display: flex;
+    flex-flow: column wrap;
+    justify-items: center;
+    align-items: center;
+  }
+  main {
+    .content {
+      margin-bottom: 20px;
+    }
+  }
+  .column-1 {
+    .skills-container {
+      transform: scale(0.7);
+    }
+    .hobbies {
+      #classified {
+        transform: rotateZ(-25deg) scale(0.9) translate(35%);
+      }
+    }
+  }
+  .tarjeta {
+    height: 120px;
+    width: 200px;
+    span {
+      margin-bottom: 15px;
+      font-size: 12px;
+    }
+    .tarjeta-data-header {
+      font-size: 18px;
+    }
+  }
+  .cross {
+    transform: scale(0.8);
+  }
+  .locked {
+    height: 35px;
+    width: 40px;
+    vertical-align: center;
+    font-size: 22px;
+    line-height: 1.5em;
+  }
+  .head {
+    .shelve {
+      transform: scale(0.5);
+    }
+  }
+  .modern-style {
+    font-size: 12px;
+  }
+  .old-style {
+    border: none;
+    font-size: 14px;
+  }
+  .commodore {
+    .cursor::after {
+      width: 9px;
+      height: 12px;
+    }
+  }
+}
+@media screen and (max-width: 280px) {
+  #options-button {
+    transform: scale(0.6);
+  }
+  .old-style {
+    border: none;
+    font-size: 12px;
+  }
+  .column-1 {
+    .side-tag {
+      letter-spacing: 0px;
+    }
+    .hobbies {
+      #classified {
+        transform: rotateZ(-25deg) scale(0.7) translate(40%, 10%);
+      }
+    }
+  }
+  .screen {
+    width: 97%;
+  }
+}

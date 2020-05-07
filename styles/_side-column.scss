@@ -1,0 +1,189 @@
+.column-1 {
+  background-color: $colorPrimary;
+  min-height: 97vh;
+  margin-bottom: 20px;
+  @include displayDefault(column, none);
+  align-items: center;
+  box-shadow: 10px 10px 7px gray;
+  .logos-placeholder {
+    margin-top: 10px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 3% 1fr 1fr 1fr 3%;
+    justify-items: center;
+    .logo {
+      width: 50px;
+      height: 50px;
+      transform: scale(1.2);
+      margin-top: 5px;
+      background-image: url("../img/assets-table.svg");
+      background-position: -399px -321px;
+      grid-column: 2;
+    }
+    #github-logo {
+      width: 120px;
+      height: 120px;
+      background-image: url("../img/assets-table.svg");
+      background-position: -1243px -251px;
+      margin-bottom: 3px;
+    }
+  }
+  #technologies {
+    display: flex;
+    flex-flow: row wrap;
+  }
+  .technologies {
+    height: 50px;
+    width: 50px;
+    margin: 5px;
+    background: url("../img/assets-table.svg");
+  }
+  .javascript-logo {
+    background-position: -3px -216px;
+  }
+  .css-logo {
+    background-position: -54px -216px;
+    width: 44px;
+  }
+  .html-logo {
+    background-position: -98px -216px;
+    width: 44px;
+  }
+  .saas-logo {
+    background-position: -144.89px -220px;
+  }
+  .bootstrap-logo {
+    background-position: -199px -216px;
+  }
+  .node-logo {
+    background-position: -252px -216px;
+    width: 43.75px;
+  }
+  .react-logo {
+    background-position: -299px -216px;
+  }
+  .redux-logo {
+    background-position: -349px -216px;
+    width: 55px;
+  }
+  .figma-logo {
+    background-position: -410px -216px;
+  }
+  .side-tag {
+    @include textPrimary($textBold, $textColor);
+    width: 100%;
+    margin: 20px 0px;
+    letter-spacing: 8px;
+    font-size: 20px;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 5px;
+  }
+  #technologies-bar {
+    background-color: #fa5252;
+  }
+  #contact {
+    background-color: #be4bdb;
+  }
+  .contact-container {
+    @include displayDefault(row, space-around);
+    width: 100%;
+    @include textPrimary($textDefault, $textColor);
+  }
+  .mail {
+    @include displayDefault(column, center);
+    .mail-img {
+      height: 50px;
+      width: 64.95px;
+      background: url("../img/assets-table.svg");
+      background-position: -251px -320px;
+      margin: 7px;
+    }
+  }
+  .whatsapp {
+    @include displayDefault(column, center);
+    .whats-img {
+      height: 51px;
+      width: 53px;
+      background: url("../img/assets-table.svg");
+      background-position: -335.2px -317px;
+      margin: 7px;
+    }
+  }
+  #stats {
+    background-color: #4c6ef5;
+  }
+  .skills-container {
+    min-height: 100px;
+    display: grid;
+    grid-template-columns: 3fr repeat(10, min-content);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 2px;
+    align-items: center;
+    span {
+      margin-right: 0.3em;
+    }
+    .active-stat {
+      animation: proyector infinite 0.45s;
+      opacity: 0.7;
+      @keyframes stats {
+        100% {
+          opacity: 1;
+        }
+      }
+    }
+    @include textPrimary($textDefault, $textColor);
+    @mixin value($tone) {
+      height: 14px;
+      width: 14px;
+      border-radius: 16%;
+      background-color: $tone;
+      margin: 0.1em;
+    }
+    .value {
+      @include value(gray);
+      transform: translateZ(0);
+    }
+    .javascript {
+      @include value(white);
+      box-shadow: 5px 0 4px yellow, -2px 0 8px yellow, 15px 0 30px yellow, -20px 0 100px yellow;
+    }
+    .css-3 {
+      @include value(red);
+      box-shadow: 5px 0 4px red, -2px 0 8px red, 15px 0 30px red, -20px 0 100px red;
+    }
+    .html {
+      @include value(white);
+      box-shadow: 5px 0 4px blue, -2px 0 8px blue, 15px 0 30px blue, -20px 0 100px blue;
+    }
+    .react {
+      @include value(white);
+      box-shadow: 5px 0 4px white, -2px 0 8px white, 15px 0 30px white, -20px 0 100px white;
+    }
+  }
+  #hobbies {
+    background-color: #e77415;
+  }
+  .hobbies {
+    display: flex;
+    position: relative;
+    margin-bottom: 10%;
+    #book {
+      background: url("../img/assets-table.svg");
+      background-position: -1077px -294px;
+      width: 86px;
+      height: 50.8px;
+      align-self: center;
+    }
+    #classified {
+      position: absolute;
+      right: 0;
+      top: 0px;
+      width: 250px;
+      height: 75px;
+      background: url("../img/assets-table.svg");
+      background-position: -0px -297px;
+      transform: rotateZ(-25deg) translateY(-16%);
+    }
+  }
+}

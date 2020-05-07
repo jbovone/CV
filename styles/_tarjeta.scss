@@ -1,0 +1,67 @@
+.tarjeta {
+  position: relative;
+  @include displayDefault(row, space-evenly);
+  @include textPrimary($textDefault, $textColor);
+  flex-flow: wrap;
+  height: 160px;
+  width: 320px;
+  border-radius: 20px;
+  background: $colorPrimary;
+
+  span {
+    margin-bottom: 15px;
+  }
+  .tarjeta-img {
+    margin: 5px;
+    border-radius: 50%;
+    height: 100px;
+  }
+  .tarjeta-data-header {
+    @include textPrimary($textBold, $textColor);
+    font-size: 25px;
+  }
+}
+.tarjeta-fixed {
+  &.tarjeta-fixed::after {
+    content: "";
+    opacity: 0;
+    animation: light 2s forwards;
+    background: linear-gradient(250deg, #fd7e14, #4c6ef5, #be4bdb, #fa5353);
+    position: absolute;
+    border-radius: 30px;
+    top: -3px;
+    right: -3px;
+    left: -3px;
+    bottom: -3px;
+    z-index: -2;
+    filter: blur(80px);
+  }
+  &.tarjeta::before {
+    content: "";
+    opacity: 0;
+    animation: light 1s forwards;
+    background: linear-gradient(250deg, #fd7e14, black, #4c6ef5, black, #fa5252);
+    position: absolute;
+    border-radius: 20px;
+    top: -3px;
+    right: -3px;
+    left: -3px;
+    bottom: -3px;
+    z-index: -1;
+  }
+}
+.tarjeta-init {
+  transform: translate(100%, 200%) scale(0.1) rotate(0deg);
+  opacity: 0;
+  animation: tarjeta 1s ease-out forwards, light 0.5s forwards;
+  @keyframes tarjeta {
+    100% {
+      transform: translate(0%, 0%) scale(1) rotate(360deg);
+    }
+  }
+}
+@keyframes light {
+  100% {
+    opacity: 1;
+  }
+}

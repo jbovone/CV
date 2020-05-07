@@ -1,0 +1,100 @@
+.keyboard-button {
+    display: none;
+    position: absolute;
+    background-image: url("../img/assets-table.svg");
+    background-position: -498px -335px;
+    bottom: 0px;
+    left: 0px;
+    margin: 8px;
+    width: 25px;
+    height: 25px;
+}
+#keyboard-modal {
+    width: 100vw;
+    position: fixed;
+    bottom: 0;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: rgba(13, 1, 51, 0.7);
+    display: flex;
+    flex-flow: column nowrap;
+    font-family: monospace;
+    color: $textColor;
+    user-select: none;
+    z-index: 10;
+
+    .keyboard-row {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+        .key {
+            user-select: none;
+            margin: 0 0.04em;
+            text-align: left;
+            text-indent: 33%;
+            vertical-align: center;
+            background: url("../img/assets-table.svg");
+            background-position: 3% 32.3%;
+            background-repeat: no-repeat;
+            background-size: 5000%;
+            font-size: 3vw;
+            height: 8vw;
+            width: 8vw;
+            line-height: 7vw;
+        }
+        .c64logo {
+            background-position: 0% 32.3%;
+            color: transparent;
+        }
+        .special {
+            background-position: 10.5% 32.48%;
+            text-indent: 20%;
+            background-size: 3450%;
+            font-size: 2vw;
+            width: 11vw;
+        }
+        .CTRL {
+            text-indent: 25%;
+            font-size: 2.1vw;
+        }
+        .return {
+            background-size: 2700%;
+            background-position: 15.82% 32.5%;
+            width: 14vw;
+            text-indent: 13%;
+            text-align: left;
+            font-size: 2.5vw;
+        }
+        .restore {
+            background-position: 6.5% 32.48%;
+            text-indent: 11%;
+            background-size: 3200%;
+            text-align: left;
+            font-size: 1.9vw;
+            width: 11vw;
+        }
+        .space {
+            background: url("../img/assets-table.svg");
+            background-position: 2.35% 42.8%;
+            background-size: 760%;
+            width: 60vw;
+        }
+        .run {
+            position: relative;
+            font-size: 2vw;
+            text-indent: 22%;
+            line-height: 5.7vw;
+        }
+        .run::after {
+            content: "STOP";
+            position: absolute;
+            top: 28%;
+            left: 4%;
+        }
+        .pad {
+            font-size: 2.2vw;
+            text-indent: 18%;
+        }
+    }
+}

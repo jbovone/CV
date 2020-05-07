@@ -1,0 +1,23 @@
+$colorPrimary: #0e1225;
+$colorSecundary: white;
+$textColor: white;
+$textColorSecundary: #82c91e;
+$textBold: 700;
+$textDefault: 500;
+
+@mixin displayDefault($direction, $justify) {
+  display: flex;
+  justify-content: $justify;
+  align-items: center;
+  flex-flow: $direction;
+}
+
+@mixin textPrimary($weight, $color) {
+  font-family: "Oxanium";
+  font-weight: $weight;
+  color: $textColor;
+}
+$myOrange: #fd7e14;
+$myBlue: #4c6ef5;
+$myViolet: #be4bdb;
+$myRed: #fa5252;

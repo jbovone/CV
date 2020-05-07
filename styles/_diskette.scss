@@ -1,0 +1,52 @@
+.shelve {
+  position: relative;
+  width: 380px;
+  height: 180px;
+  margin: 20px 0;
+  z-index: 1;
+}
+#shelve {
+  width: 380px;
+  height: 180px;
+  background: url("../img/assets-table.svg");
+  background-position: -987px 0px;
+  position: absolute;
+  top: 45px;
+  z-index: -1;
+}
+.diskette-icon {
+  position: absolute;
+  background: url("../img/assets-table.svg");
+  height: 110px;
+  width: 110px;
+  cursor: pointer;
+}
+#diskette-hello {
+  background-position: -110px 0px;
+  top: 100px;
+  left: 220px;
+}
+#diskette-javascript {
+  background-position: -330px 0px;
+  top: 60px;
+  left: 180px;
+}
+#diskette-react {
+  background-position: -440px 0px;
+  top: 25px;
+  left: 140px;
+}
+#diskette-sass {
+  background-position: -550px 0px;
+  top: -25px;
+  left: 70px;
+}
+#diskette-figma {
+  top: -10px;
+  left: 110px;
+}
+#diskette-tetris {
+  background-position: -660px 0px;
+  top: -50px;
+  left: 30px;
+}

@@ -1,0 +1,68 @@
+#pad-modal {
+    width: 100vw;
+    position: fixed;
+    bottom: 0;
+    color: $textColor;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.pad-direction {
+    width: 70%;
+    height: 70%;
+    background-image: url("../img/assets-table.svg");
+    background-position: -535px -320px;
+    border-radius: 10%;
+    background-repeat: no-repeat;
+}
+.cross {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    align-items: center;
+    background: url("../img/assets-table.svg");
+    background-position: 57.5% 95.39%;
+    width: 202px;
+    height: 202px;
+    user-select: none;
+    justify-self: center;
+    background-repeat: no-repeat;
+}
+.rightPad {
+    grid-column: 3;
+    grid-row: 2;
+    transform: rotate(90deg);
+}
+.leftPad {
+    grid-column: 1;
+    grid-row: 2;
+    transform: rotate(-90deg);
+    justify-self: end;
+}
+.downPad {
+    grid-column: 2;
+    grid-row: 3;
+    transform: rotate(180deg);
+    justify-self: center;
+    align-self: baseline;
+}
+.upPad {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: center;
+    align-self: end;
+}
+.cross-active {
+    background-color: red;
+    box-shadow: 0px 0px 5px 5px red;
+}
+
+.close {
+    position: absolute;
+    background: url("../img/assets-table.svg");
+    background-position: -460px -330px;
+    width: 26px;
+    height: 33px;
+    bottom: 10px;
+    right: 33px;
+}

@@ -1,0 +1,108 @@
+.modern-style {
+  font-family: "Oxanium";
+  font-size: 18px;
+  border: none;
+  font-weight: 900;
+  line-height: 1.03;
+  opacity: 0.8;
+}
+.old-style {
+  font-family: "Commodore";
+  border: 50px solid;
+  border-color: #8977ce;
+  background-color: #5c46ad;
+  line-height: 1;
+  opacity: 0.9;
+}
+.screen {
+  height: 560px;
+  width: calc(5 / 4 * 560px);
+  margin-bottom: 30px;
+}
+.commodore {
+  height: inherit;
+  display: none;
+  flex-direction: column;
+  color: #8977ce;
+  .display .leyend {
+    width: 100%;
+    text-align: center;
+  }
+  .title {
+    margin-top: 0.9em;
+  }
+  .system {
+    div {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      white-space: pre;
+    }
+  }
+  .prompt {
+    min-height: 15px;
+  }
+  .display {
+    display: flex;
+    flex-flow: wrap-reverse column;
+  }
+
+  .display .cursor::after {
+    background-color: transparent;
+    opacity: 1;
+  }
+  .cursor::after {
+    position: absolute;
+    content: "";
+    width: 12px;
+    height: 15px;
+    margin-left: 0.1em;
+    background-color: #8977ce;
+    animation: icursor 350ms linear 0s infinite;
+    @keyframes icursor {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+  }
+  animation: proyector 300ms infinite 2s;
+  @keyframes proyector {
+    0% {
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+    }
+  }
+}
+.figure {
+  border-radius: 30%;
+  opacity: 0.8;
+}
+.collider {
+  border-radius: 30%;
+}
+.wall {
+  border-radius: 30%;
+}
+.board {
+  background-color: black;
+  opacity: 0.6;
+}
+.fadding {
+  opacity: 0;
+}
+.commodore-on {
+  transform: scale(0) translateY(-45%) translateX(-150%);
+  animation: spawn 900ms forwards ease-in-out;
+  @keyframes spawn {
+    100% {
+      transform: scale(1) translateY(0%) translateX(0%) rotate(360deg);
+      border-radius: 0;
+    }
+  }
+}
